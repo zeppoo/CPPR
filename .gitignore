@@ -1,12 +1,55 @@
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
-CMakeUserPresets.json
+# CLion specific files
+CPPR/.idea/
+
+# CMake build files
+CPPR/cmake-build-*/
+
+# Auto-generated CMake files
+CPPR/CMakeCache.txt
+CPPR/CMakeFiles/
+CPPR/CMakeScripts/
+CPPR/CMakeTmp/
+CPPR/cmake_install.cmake
+CPPR/CTestTestfile.cmake
+CPPR/cmake-build-debug/
+CPPR/cmake-build-release/
+CPPR/CMakeLists.txt.user
+CPPR/CMakeLists.txt.user.*
+
+# Executables and object files
+CPPR/*.obj
+CPPR/*.o
+CPPR/*.lo
+CPPR/*.la
+CPPR/*.a
+CPPR/*.so
+CPPR/*.dylib
+CPPR/*.lib
+CPPR/*.dll
+CPPR/*.exe
+CPPR/*.out
+CPPR/*.app
+CPPR/*.i
+CPPR/*.ii
+
+# Debug and Release directories
+CPPR/debug/
+CPPR/release/
+CPPR/*.dSYM/
+CPPR/*.stackdump
+
+# Logs and databases
+CPPR/*.log
+CPPR/*.sql
+CPPR/*.sqlite
+
+# IDE temp files
+CPPR/*.swp
+CPPR/*~
+CPPR/*#
+
+# Other IDEs
+CPPR/.vscode/
+CPPR/build/
+CPPR/.idea/
+CPPR/.DS_Store
