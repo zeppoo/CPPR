@@ -1,4 +1,4 @@
-#include "../../../Crow-Engine/CrowEngine/libs/cppr/type_resolver.hpp"
+#include "../include/type_resolver.hpp"
 
 namespace reflect
 {

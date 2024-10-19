@@ -1,4 +1,4 @@
-#include "../../../Crow-Engine/CrowEngine/libs/cppr/descriptors.hpp"
+#include "../include/descriptors.hpp"
 
 namespace reflect
 {
@@ -23,13 +23,15 @@ namespace reflect
 
   void StructDescriptor::To_Json(const char* filePath, void* structRef)
   {
-    std::string content = "\"" + std::string(name) + "\": {\n";
+    std::string content = "{\n\"" + std::string(name) + "\": {\n";
     for (const auto &member: members)
     {
       void *memberPtr = GetMemberMemAdress(structRef, member.offset);
       content += member.type->serialize(memberPtr);
     }
-    content += "}";
+    content.pop_back(); // Remove the last '\n'
+    content.pop_back(); // Remove the last ','
+    content += "\n}\n}";
     split(content, '\n');
     WriteToFile(filePath, content);
   }

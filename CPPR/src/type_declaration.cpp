@@ -1,4 +1,4 @@
-#include "../../../Crow-Engine/CrowEngine/libs/cppr/type_declaration.hpp"
+#include "../include/type_declaration.hpp"
 
 namespace reflect
 {

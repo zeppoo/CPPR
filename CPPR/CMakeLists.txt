@@ -8,7 +8,6 @@ set(CMAKE_CXX_STANDARD 17)
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 add_library(CPPR STATIC
-        src/cppr_tests.cpp
         src/descriptors.cpp
         src/serialization.cpp
         src/type_declaration.cpp

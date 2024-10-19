@@ -1,4 +1,4 @@
-#include "../../../Crow-Engine/CrowEngine/libs/cppr/type_info.hpp"
+#include "../include/type_info.hpp"
 
 namespace reflect
 {
@@ -13,7 +13,7 @@ namespace reflect
 
   std::string PrimitiveTypeInfo::serialize(void* memberPtr) {
     types value = get_type(kind, memberPtr);
-    return "\"" + std::string(name) + "\": " + toString(value) + "\n";
+    return "\"" + std::string(name) + "\": " + toString(value) + ",\n";
   }
 
   void PrimitiveTypeInfo::deserialize(std::string content, void* memberPtr)
@@ -51,7 +51,7 @@ namespace reflect
         if(i++ < list.size() - 1) ss << ", ";
       }
     }, element_value);
-    ss << "]\n";
+    ss << "],\n";
     return ss.str();
   }
 
@@ -93,7 +93,7 @@ namespace reflect
       }
     }, get_type(element_info->kind, memberPtr));  // Determine the element type
 
-    ss << "]\n";  // Close the JSON array
+    ss << "],\n";  // Close the JSON array
     return ss.str();  // Return the serialized string
   }
 
