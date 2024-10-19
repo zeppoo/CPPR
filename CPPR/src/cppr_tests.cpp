@@ -1,9 +1,7 @@
 #include "../../../Crow-Engine/CrowEngine/libs/cppr/cppr_tests.hpp"
 
-namespace cppr_tests
+namespace reflect
 {
-
-
   int Test1(const char* filePath)
   {
     char initials = 'T';

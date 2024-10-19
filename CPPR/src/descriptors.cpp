@@ -13,17 +13,7 @@ namespace reflect
     init(this);
   }
 
-  template<typename T>
-  void StructDescriptor::AddMember(const char *memberName, size_t size, size_t memberOffset)
-  {
-    TypeDescriptor member{memberName, size, memberOffset};
-    member.type = create_type_info<T>(memberName);
-    if (member.type->kind == UNKNOWN) {
-      throw std::runtime_error("Unkown Type detected, member name: " + std::string(memberName));
-      return;
-    }
-    members.push_back(std::move(member));
-  }
+
 
   void *StructDescriptor::GetMemberMemAdress(void *reference, size_t offset)
   {
