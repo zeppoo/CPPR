@@ -1,0 +1,20 @@
+# ninja log v5
+596	668	7510734512100376	libCPPR.a	d14ee97faf1e91d4
+28	1024	7510443547117827	CMakeFiles/CPPR.dir/src/type_resolver.cpp.obj	f162c2c18ba97e8
+2	252	7510734873654396	build.ninja	90b3cca4908698c4
+17	734	7510443544220905	CMakeFiles/CPPR.dir/src/serialization.cpp.obj	98d28d6c223b81e0
+24	2436	7510443561230892	CMakeFiles/CPPR.dir/src/type_info.cpp.obj	d536537d2d21718c
+6	595	7510734511379750	CMakeFiles/CPPR.dir/src/descriptors.cpp.obj	5712a7ad2691fdf
+10	715	7510734512582035	CMakeFiles/run_tests.dir/main.cpp.obj	9c12a0254ca1278e
+715	820	7510734513585022	run_tests.exe	acc5e775bf3df71
+20	399	7510443540852500	CMakeFiles/CPPR.dir/src/type_declaration.cpp.obj	f47762491efb115
+15	364	7510734891419900	CMakeFiles/CPPR.dir/src/type_declaration.cpp.obj	f47762491efb115
+6	564	7510734893419351	CMakeFiles/CPPR.dir/src/descriptors.cpp.obj	5712a7ad2691fdf
+11	671	7510734894503027	CMakeFiles/CPPR.dir/src/serialization.cpp.obj	98d28d6c223b81e0
+22	959	7510734897371654	CMakeFiles/CPPR.dir/src/type_resolver.cpp.obj	f162c2c18ba97e8
+18	2219	7510734909979110	CMakeFiles/CPPR.dir/src/type_info.cpp.obj	d536537d2d21718c
+2219	2278	7510734910570635	libCPPR.a	d14ee97faf1e91d4
+7	589	7510739272608845	CMakeFiles/run_tests.dir/main.cpp.obj	9c12a0254ca1278e
+589	691	7510739273594953	run_tests.exe	acc5e775bf3df71
+7	590	7510740102115681	CMakeFiles/run_tests.dir/main.cpp.obj	9c12a0254ca1278e
+590	686	7510740103051285	run_tests.exe	acc5e775bf3df71

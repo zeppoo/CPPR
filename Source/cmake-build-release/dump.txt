@@ -1,0 +1,7 @@
+{
+"MyStruct": {
+"number": 3,
+"vector": [4, 2],
+"namesPtr": [0xf4d8bff650, 0xf4d8bff670, 0xf4d8bff690, 0xf4d8bff6b0]
+}
+}

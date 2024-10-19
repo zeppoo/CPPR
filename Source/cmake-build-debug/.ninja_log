@@ -1,0 +1,8 @@
+# ninja log v5
+1376	1509	7508180430616847	libCPPR.a	f153bc8550436e46
+14	370	7510740169144293	CMakeFiles/CPPR.dir/src/type_declaration.cpp.obj	daa0e0c58af1115
+10	528	7510740170722823	CMakeFiles/CPPR.dir/src/serialization.cpp.obj	e601c584515913a5
+6	548	7510740170925932	CMakeFiles/CPPR.dir/src/descriptors.cpp.obj	46566bf84864d227
+20	720	7510740172630675	CMakeFiles/CPPR.dir/src/type_resolver.cpp.obj	e81780719c7e6353
+17	2594	7510740191281984	CMakeFiles/CPPR.dir/src/type_info.cpp.obj	7934c40a6dc59fdd
+2594	4255	7510740207998905	libCPPR.a	d14ee97faf1e91d4
