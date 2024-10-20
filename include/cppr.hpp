@@ -42,13 +42,12 @@ void WriteStructsToFile(const char* filepath, Struct*... structs) {
 }
 
 template <typename Struct>
-void MultiStructJsonDeserializer(const char* filepath, Struct* Struct_ptr) {
+void StructJsonDeserializer(const char* filepath, Struct* Struct_ptr) {
   Struct_ptr->structDesc.From_Json(filepath, Struct_ptr);
 }
 
 template <typename Struct, typename... Args>
-void MultiStructJsonDeserializer(const char* filepath, Struct* first_Struct_ptr, Args*... remaining_Struct_ptrs) {
-  // Process the first Struct structure
+void StructJsonDeserializer(const char* filepath, Struct* first_Struct_ptr, Args*... remaining_Struct_ptrs) {
   first_Struct_ptr->structDesc.From_Json(filepath, first_Struct_ptr);
-  MultiStructJsonSerializer(filepath, remaining_Struct_ptrs...);
+  StructJsonSerializer(filepath, remaining_Struct_ptrs...);
 }

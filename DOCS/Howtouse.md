@@ -39,12 +39,15 @@ REFLECT_STRUCT_END()
 ## 4. Using Reflection at Runtime
 
 - Access type information by referencing `myStruct.structDesc`
-- Serialize the struct by calling `myStruct.structDesc.To_Json("filePath", &myStruct);`
-- Deserialize the struct by calling `myStruct.structDesc.From_Json("filePath", &myStruct);`
+- Serialize the struct by calling `WriteStructsToFile("config.json", &myStruct);` ( the function takes in any amount of struct arguments)
+- Deserialize the struct by calling `StructJsonDeserializer("config.json", &myStruct);` ( the function takes in any amount of struct arguments)
 
 ```
-myStruct.structDesc.To_Json("config.json", &myStruct);
-myStruct.structDesc.From_Json("config.json", &myStruct);
+  WriteStructsToFile("dump.txt", &myStruct);
+  StructJsonDeserializer("dump.txt", &myStruct);
+  
+  WriteStructsToFile("dump.txt", &myStruct, &myStruct2,&myStruct3);
+  StructJsonDeserializer("dump.txt", &myStruct, &myStruct2,&myStruct3);
 ```
 
 ## 6. Best Practices

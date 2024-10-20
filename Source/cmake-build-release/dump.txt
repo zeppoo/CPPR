@@ -1,0 +1,17 @@
+{
+"MyStruct": {
+"number": 3,
+"vector": [4, 2],
+"namesPtr": ["0xb3b6dff460", "0xb3b6dff480", "0xb3b6dff4a0", "0xb3b6dff4c0"]
+},
+"MyStruct2": {
+"number": 6,
+"vector": [8, 4],
+"namesPtr": ["0xb3b6dff4e0", "0xb3b6dff500", "0xb3b6dff520", "0xb3b6dff540"]
+},
+"MyStruct3": {
+"number3": 9,
+"vector3": [12, 6],
+"namesPtr3": ["0xb3b6dff560", "0xb3b6dff580", "0xb3b6dff5a0", "0xb3b6dff5c0"]
+}
+}

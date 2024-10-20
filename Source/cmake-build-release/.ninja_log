@@ -12,3 +12,9 @@
 17	919	7511307554099827	CMakeFiles/CPPR.dir/src/type_resolver.cpp.obj	4bb7745d1fb186cb
 14	2164	7511307566559567	CMakeFiles/CPPR.dir/src/type_info.cpp.obj	4342bedd71a9a4e3
 2165	2222	7511307567138837	libCPPR.a	ebe9a932bec13b54
+8	793	7511313144345039	CMakeFiles/run_tests.dir/main.cpp.obj	5bec8b533319387c
+794	907	7511313145412260	run_tests.exe	acc5e775bf3df71
+7	734	7511314649205181	CMakeFiles/run_tests.dir/main.cpp.obj	5bec8b533319387c
+734	830	7511314650131664	run_tests.exe	acc5e775bf3df71
+8	836	7511314994089310	CMakeFiles/run_tests.dir/main.cpp.obj	5bec8b533319387c
+836	943	7511314995144522	run_tests.exe	acc5e775bf3df71

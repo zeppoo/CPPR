@@ -8,11 +8,19 @@ int main()
 
   WriteStructsToFile("dump.txt", &myStruct);
 
+  StructJsonDeserializer("dump.txt", &myStruct);
+
+  std::cout << "\nTest 1 Complete!\n" << std::endl;
+
   std::string names2[4] = {"hi","Hello","y0","m8m"};
 
   MyStruct2 myStruct2{6 , {8,4}, {&names2[0], &names2[1], &names2[2], &names2[3]}};
 
   WriteStructsToFile("dump.txt", &myStruct2);
+
+  StructJsonDeserializer("dump.txt", &myStruct2);
+
+  std::cout << "\nTest 2 Complete!\n" << std::endl;
 
   std::string names3[4] = {"hi","Hello","y0","m8m"};
 
@@ -20,8 +28,16 @@ int main()
 
   WriteStructsToFile("dump.txt", &myStruct3);
 
+  StructJsonDeserializer("dump.txt", &myStruct3);
+
+  std::cout << "\nTest 3 Complete!\n" << std::endl;
+
   WriteStructsToFile("dump.txt", &myStruct, &myStruct2,&myStruct3);
 
-  std::cout << "Test Complete" << std::endl;
+  StructJsonDeserializer("dump.txt", &myStruct, &myStruct2,&myStruct3);
+
+  std::cout << "Test 4 Complete" << std::endl;
+
+  std::cout << "\nAll Tests Successful!\n" << std::endl;
   return 0;
 }
