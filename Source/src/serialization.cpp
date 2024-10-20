@@ -22,7 +22,6 @@ namespace reflect
     std::stringstream buffer;
     buffer << file.rdbuf();
     std::string fileContent = buffer.str();
-    std::cout << fileContent << std::endl;
     file.close();
     return fileContent;
   }
