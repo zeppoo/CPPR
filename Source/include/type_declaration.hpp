@@ -89,7 +89,7 @@ namespace reflect
     } else if constexpr (std::is_integral_v<T>) {
       return I_INT;
     } else {
-      throw std::runtime_error("This Type is not supported for reflection!");
+      throw std::runtime_error("Type not supported for reflection!");
       return UNKNOWN;
     }
   }
