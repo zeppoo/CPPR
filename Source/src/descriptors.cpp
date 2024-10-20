@@ -13,17 +13,15 @@ namespace reflect
     init(this);
   }
 
-
-
   void *StructDescriptor::GetMemberMemAdress(void *reference, size_t offset)
   {
     char *bytePtr = static_cast<char *>(reference);
     return bytePtr + offset;
   }
 
-  void StructDescriptor::To_Json(const char* filePath, void* structRef)
+  std::string StructDescriptor::To_Json(const char* filePath, void* structRef)
   {
-    std::string content = "{\n\"" + std::string(name) + "\": {\n";
+    std::string content = "\"" + std::string(name) + "\": {\n";
     for (const auto &member: members)
     {
       void *memberPtr = GetMemberMemAdress(structRef, member.offset);
@@ -31,9 +29,9 @@ namespace reflect
     }
     content.pop_back(); // Remove the last '\n'
     content.pop_back(); // Remove the last ','
-    content += "\n}\n}";
+    content += "\n}";
     split(content, '\n');
-    WriteToFile(filePath, content);
+    return content;
   }
 
   void StructDescriptor::From_Json(const char* filePath, void* structRef)
@@ -44,7 +42,7 @@ namespace reflect
     for (auto &member: members)
     {
       void *memberPtr = GetMemberMemAdress(structRef, member.offset);
-      member.type->deserialize(content, memberPtr);
+      member.type->deserialize(content, std::string(name), memberPtr);
     }
   }
 }

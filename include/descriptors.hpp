@@ -33,7 +33,7 @@ namespace reflect
     }
 
     void *GetMemberMemAdress(void *reference, size_t offset);
-    void To_Json(const char* filePath, void* structRef);
+    std::string To_Json(const char* filePath, void* structRef);
     void From_Json(const char* filePath, void* structRef);
   };
 }

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/ReinV/Personal/Coding/C++/Projects/CPPR/CPPR
+# Install script for directory: C:/Users/ReinV/Personal/Coding/C++/Projects/CPPR/Source
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/ReinV/Personal/Coding/C++/Projects/CPPR/CPPR/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/ReinV/Personal/Coding/C++/Projects/CPPR/Source/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

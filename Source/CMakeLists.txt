@@ -10,7 +10,6 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 add_library(CPPR STATIC
         src/descriptors.cpp
         src/serialization.cpp
-        src/type_declaration.cpp
         src/type_info.cpp
         src/type_resolver.cpp)
 

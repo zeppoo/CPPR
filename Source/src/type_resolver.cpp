@@ -8,7 +8,7 @@ namespace reflect
 //
   std::string toString(void* value) {
     std::ostringstream oss;
-    oss << std::hex << std::uppercase << value;
+    oss << "\"" << std::hex << std::uppercase << value << "\"";
     return oss.str();
   }
 

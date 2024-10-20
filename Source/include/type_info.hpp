@@ -16,7 +16,7 @@ namespace reflect
     virtual ~TypeInfo();
 
     virtual std::string serialize(void* memberPtr);
-    virtual void deserialize(std::string json, void* memberPtr);
+    virtual void deserialize(std::string json, std::string parent, void* memberPtr);
   };
 
   struct PrimitiveTypeInfo : TypeInfo
@@ -24,7 +24,7 @@ namespace reflect
     PrimitiveTypeInfo(const char* name, const primitive_type kind, size_t size, bool isPtr);
 
     std::string serialize(void* memberPtr) override;
-    void deserialize(std::string content, void* memberPtr) override;
+    void deserialize(std::string content, std::string parent, void* memberPtr) override;
   };
 
   struct VectorTypeInfo : TypeInfo
@@ -34,7 +34,7 @@ namespace reflect
     VectorTypeInfo(const char* name, size_t size, std::unique_ptr<TypeInfo> element_info);
 
     std::string serialize(void* memberPtr) override;
-    void deserialize(std::string content, void* memberPtr) override;
+    void deserialize(std::string content, std::string parent, void* memberPtr) override;
   };
 
   struct ArrayTypeInfo : TypeInfo
@@ -44,7 +44,7 @@ namespace reflect
     ArrayTypeInfo(const char* name, size_t size, std::unique_ptr<TypeInfo> element_info);
 
     std::string serialize(void* memberPtr) override;
-    void deserialize(std::string content, void* memberPtr) override;
+    void deserialize(std::string content, std::string parent, void* memberPtr) override;
   };
 
   template<typename T>

@@ -52,8 +52,9 @@ namespace reflect
     str.erase(std::remove(str.begin(), str.end(), delimiter), str.end());
   }
 
-  std::string extract_json_value(const std::string& json, const std::string& field) {
-    auto start_pos = json.find("\"" + field + "\":");
+  std::string extract_json_value(const std::string& json, const std::string& field, const std::string& parent) {
+    auto start_pos = json.find("\"" + parent + "\":");
+    start_pos = json.find("\"" + field + "\":", start_pos);
     if (start_pos == std::string::npos) return ""; // field not found
 
     start_pos = json.find_first_of(":", start_pos) + 1;
@@ -66,9 +67,9 @@ namespace reflect
     return value;
   }
 
-  std::vector<std::string> extract_json_values(const std::string& json, const std::string& id) {
+  std::vector<std::string> extract_json_values(const std::string& json, const std::string& field, const std::string& parent) {
     std::vector<std::string> result;
-    std::size_t idPos = json.find("\""+ id + "\":[");
+    std::size_t idPos = json.find("\""+ field + "\":[");
     // Find the array part between '[' and ']'
     size_t start = json.find('[', idPos);
     size_t end = json.find(']', start);

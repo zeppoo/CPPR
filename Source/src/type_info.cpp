@@ -7,7 +7,7 @@ namespace reflect
   TypeInfo::~TypeInfo() {}
 
   std::string TypeInfo::serialize(void* memberPtr) {return "0";}
-  void TypeInfo::deserialize(std::string json, void* memberPtr) {}
+  void TypeInfo::deserialize(std::string json, std::string parent, void* memberPtr) {}
 
   PrimitiveTypeInfo::PrimitiveTypeInfo(const char* name, const primitive_type kind, size_t size, bool isPtr) : TypeInfo(name, kind, size) {}
 
@@ -16,9 +16,9 @@ namespace reflect
     return "\"" + std::string(name) + "\": " + toString(value) + ",\n";
   }
 
-  void PrimitiveTypeInfo::deserialize(std::string content, void* memberPtr)
+  void PrimitiveTypeInfo::deserialize(std::string content, std::string parent, void* memberPtr)
   {
-    std::string json_value = extract_json_value(content, name);
+    std::string json_value = extract_json_value(content, name, parent);
     types value = get_type(kind, memberPtr);
     std::visit([&](auto&& arg) {
       using T = std::decay_t<decltype(arg)>;
@@ -55,8 +55,8 @@ namespace reflect
     return ss.str();
   }
 
-  void VectorTypeInfo::deserialize(std::string content, void* memberPtr) {
-    std::vector<std::string> json_values = extract_json_values(content, name);
+  void VectorTypeInfo::deserialize(std::string content, std::string parent, void* memberPtr) {
+    std::vector<std::string> json_values = extract_json_values(content, name, parent);
     std::vector<void*>* vec = static_cast<std::vector<void*>*>(memberPtr); // member becomes vector holding empty data
     size_t element_offset = &vec[0] - vec; // calculate offset of the singular void* in the vector
     element_offset *= element_info->size; // get offset by size of the data
@@ -97,8 +97,8 @@ namespace reflect
     return ss.str();  // Return the serialized string
   }
 
-  void ArrayTypeInfo::deserialize(const std::string content, void* memberPtr) {
-    std::vector<std::string> json_values = extract_json_values(content, name);
+  void ArrayTypeInfo::deserialize(const std::string content, std::string parent, void* memberPtr) {
+    std::vector<std::string> json_values = extract_json_values(content, name, parent);
     size_t arraySize = this->size / element_info->size;
 
     if (json_values.size() != arraySize) {
